@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>试验室管理系统登录</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+    <!--<link rel="stylesheet" type="text/css" href="/static/layui/lay/modules/theme/default/layer.css"/>-->
+</head>
+<style>
+	*{
+		-webkit-user-select: none;
+	}
+    body{
+        width: 100%;
+        height: 100%;
+        /*background: url(images/login-bg.jpg) no-repeat center center;*/
+        background-size:cover;
+        background-attachment:fixed;
+    }
+    .my-form-wrap{
+        background-color: #ffffff;
+        width: 460px;
+        left: 50%;
+        margin-left: -230px;
+        border-radius: 5px;
+        box-shadow: 0 0 30px rgba(0,0,0,.1);
+        padding: 65px 30px 30px 30px;
+        position: fixed;
+        top: 15%;
+        text-align: center;
+        
+    }
+    .layui-form-item-m .layui-inline{
+        margin-bottom: 0px;
+        margin-left: -5px;
+    }
+    .my-form-wrap h3{
+        color: #1E9FFF;
+        font-weight: bold;
+        margin-bottom: 50px;
+        font-size: 1.5em;
+    }
+    .my-btn-login button{
+        width: 100%;
+        padding: 0 90px;
+        background-color:#a3a8ab!important;
+    }
+    .my-btn-login button:hover{
+        /* transition: all 0.5s; */
+        background-color: #1E9FFF!important;
+    }
+
+    .my-form-pwdshow{
+        cursor: pointer;
+    }
+    .my-reg-label label{
+        color: #a3a8ab;
+    }
+    .my-reg-label label a{
+        color: #1E9FFF;
+    }
+</style>
+<body>
+	<div class="layui-fluid">
+		<div class="layui-row">
+			<div class="layui-col-md12">
+				<div class="layui-row layui-col-space20">
+                       
+                    <div class="layui-col-md3 my-form-wrap">
+                         <h3>用户登录</h3>
+                        <form action="/login" method="post"  class="layui-form layui-form-pane">
+                            <div class="layui-form-item layui-form-item-m">
+                                <i class="layui-icon layui-icon-username layui-btn layui-bg-blue"></i>
+                                <div class="layui-inline">
+                                    <input type="text" name="username" id="username" placeholder="用户名" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item layui-form-item-m my-form-item-pwd">
+                                <i class="layui-icon layui-icon-password layui-btn layui-bg-blue"></i>
+                                <div class="layui-inline">
+                                    <input type="password" name="password" id="password" placeholder="密码" class="layui-input">
+                                </div>
+                                <i class="layui-icon layui-icon-zeye-l my-form-pwdshow" isshow="false"></i>
+                            </div>
+                            <div class="layui-form-item">
+                                
+                                <div class="layui-inline my-btn-power">
+                                    <input type="radio" name="power" value="管理员" title="管理员">
+                                    <input type="radio" name="power" value="普通用户" title="普通用户" checked>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                               
+                                <div class="layui-inline my-btn-login">
+                                    <button class="layui-btn layui-bg-blue"  id="login">进入系统</button>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline my-reg-label">
+                                    <label > 还没有注册？<a href="register.html" title="立即注册" >立即注册</a></label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <!--<script src="js/jquery-3.1.1.min.js"></script>-->
+    <script src="/static/layui/layui.js"></script>
+    <!--<script src="/static/layui/lay/modules/layer.js" type="text/javascript" charset="utf-8"></script>-->
+
+    <script>
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+       
+  
+        // //监听提交
+        // form.on('submit(formDemo)', function(data){
+        //     layer.msg(JSON.stringify(data.field));
+        //     return false;
+        // });
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+
+</head>
+<body>
+<form class="layui-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label">文章标题</label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input newsName" lay-verify="required" placeholder="请输入文章标题">
+        </div>
+    </div>
+    <!--div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">自定义属性</label>
+            <div class="layui-input-block">
+                <input type="checkbox" name="tuijian" class="tuijian" title="推荐"><div class="layui-unselect layui-form-checkbox" lay-skin=""><span>推荐</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="shenhe" class="newsStatus" title="审核"><div class="layui-unselect layui-form-checkbox" lay-skin=""><span>审核</span><i class="layui-icon"></i></div>
+                <input type="checkbox" name="show" class="isShow" title="展示"><div class="layui-unselect layui-form-checkbox" lay-skin=""><span>展示</span><i class="layui-icon"></i></div>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">文章作者</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input newsAuthor" lay-verify="required" placeholder="请输入文章作者">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">发布时间</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input newsTime" lay-verify="date" onclick="layui.laydate({elem:this})">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">浏览权限</label>
+            <div class="layui-input-inline">
+                <select name="browseLook" class="newsLook" lay-filter="browseLook">
+                    <option value="0">开放浏览</option>
+                    <option value="1">会员浏览</option>
+                </select><div class="layui-unselect layui-form-select"><div class="layui-select-title"><input type="text" placeholder="开放浏览" value="开放浏览" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit"><dd lay-value="0" class="layui-this">开放浏览</dd><dd lay-value="1" class="">会员浏览</dd></dl></div>
+            </div>
+        </div>
+    </div-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">关键字</label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input" placeholder="请输入文章关键字">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">内容摘要</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容摘要" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">文章内容</label>
+        <div class="layui-input-block">
+            <textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="news_content"></textarea>
+            <div class="layui-layedit"><div class="layui-unselect layui-layedit-tool">
+                <i class="layui-icon layedit-tool-b" title="加粗" lay-command="Bold" layedit-event="b" ></i>
+                <i class="layui-icon layedit-tool-i" title="斜体" lay-command="italic" layedit-event="i"></i>
+                <i class="layui-icon layedit-tool-u" title="下划线" lay-command="underline" layedit-event="u" ></i>
+                <i class="layui-icon layedit-tool-d" title="删除线" lay-command="strikeThrough" layedit-event="d" ></i>
+                <span class="layedit-tool-mid"></span>
+                <i class="layui-icon layedit-tool-left" title="左对齐" lay-command="justifyLeft" layedit-event="left"></i>
+                <i class="layui-icon layedit-tool-center" title="居中对齐" lay-command="justifyCenter" layedit-event="center"></i>
+                <i class="layui-icon layedit-tool-right" title="右对齐" lay-command="justifyRight" layedit-event="right"></i>
+                <span class="layedit-tool-mid"></span>
+                <i class="layui-icon layedit-tool-link" title="插入链接" layedit-event="link" ></i>
+                <i class="layui-icon layedit-tool-unlink layui-disabled" title="清除链接" lay-command="unlink" layedit-event="unlink"></i>
+                <i class="layui-icon layedit-tool-face" title="表情" layedit-event="face"></i>
+                <i class="layui-icon layedit-tool-image" title="图片" layedit-event="image"><input type="file" name="file"></i>
+            </div>
+                <div class="layui-layedit-iframe">
+                    <iframe id="LAY_layedit_1" name="LAY_layedit_1" textarea="news_content" frameborder="0" style="height: 280px;">
+
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-btn textEdit"  data-type="content">获取</div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn " lay-submit="" lay-filter="addNews" >立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<script src="/static/layui/layui.js"></script>
+<script>
+    layui.config({
+         base : "js/"
+    }).use(['form','element','jquery','layer','layedit'], function(){
+        var element = layui.element;
+        var form = layui.form;
+        var $ = jQuery = layui.jquery;
+        var element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+        var layer = layui.layer;
+        var layedit = layui.layedit;
+
+        // var index = layedit.build('news_content'); //建立编辑器
+        // layedit.getContent(index) //获取html
+        //
+        // layedit.getText(index) // 获取纯文本
+
+
+        var index = layedit.build('news_content', {
+            tool: [
+                'strong' //加粗
+                ,'italic' //斜体
+                ,'underline' //下划线
+                ,'del' //删除线
+
+                ,'|' //分割线
+
+                ,'left' //左对齐
+                ,'center' //居中对齐
+                ,'right' //右对齐
+                ,'link' //超链接
+                ,'unlink' //清除链接
+                ,'face' //表情
+                ,'image' //插入图片
+            ]
+            ,height: 100
+            ,uploadImage: {
+                url: '/Layedit/Upload/',
+                type: 'post'
+            }
+        });
+
+
+        // 编辑框外部操作
+        var active = {
+            content:function () {
+                // 获取html
+                alert(layedit.getContent(index));
+            },text:function () {
+                // 获取纯文本
+                alert(layedit.getText(index));
+            },selection:function () {
+                // 获取编辑器选中的文本
+                alert(layedit.getSelection(index));
+            }
+
+
+        };
+
+
+        $('.textEdit').on('click',function () {
+
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+    });
+
+</script>
+</body>
+</html>
